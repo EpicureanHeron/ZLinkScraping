@@ -10,30 +10,25 @@ file_2= open("Results.txt", "r+")
 
 urlArray = file_1.readlines()
 
+results = []
+
 for urlcsv in urlArray:
 	response = urllib2.urlopen(urlcsv)
 	cr = csv.reader(response)
+	count = -1
 	
 	for row in cr:
-		print row
-		
-
-'''
-
-url = 'https://z.umn.edu/shortener/urls/154734/csv/click_data.csv' 
-response = urllib2.urlopen(url)
-cr = csv.reader(response)
-count = -1 #this is -1 so it ignores the header information
-
-for row in cr:
-    print row
-    count = count + 1
+		count = count + 1
 	
-print count
-'''
+	
+	file_2.write(urlcsv + " " + str(count) + '\n')
+
+#' '.join('{}{}'.format(key, val) for key, val in results.items())
 
 
-#https://z.umn.edu/shortener/urls/154734/csv/click_data.csv URL for CR13 before clicked the export to CSV button, the screen defaults in on "last 24 hours" which is 0 currently and aftering
+
+
+# https://z.umn.edu/shortener/urls/154734/csv/click_data.csv URL for CR13 before clicked the export to CSV button, the screen defaults in on "last 24 hours" which is 0 currently and aftering
 # running this program it returns 51 which is the all time amount
 
 #After hitting the "export to csv" button I got this URL https://z.umn.edu/shortener/urls/154734/csv/click_data.csv and it is sitll on the graph for the last 24 hours, still at 51
