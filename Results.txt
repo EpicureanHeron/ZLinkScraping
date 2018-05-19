@@ -1,4 +1,4 @@
-The data in the file was created at 2018-05-18 22:32:11.480000
+The data in the file was created at 2018-05-19 13:52:41.430000
 chromeriver20 3
 keyword 0
 keyword 0
@@ -17,5 +17,5 @@ chromeriver6 103
 chromeriver5 109
 chromeriver4 79
 chromeriver3 344
-chromeriver2 209
+chromeriver2 210
 chromeriver1 648

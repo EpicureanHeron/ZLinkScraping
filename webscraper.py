@@ -2,37 +2,39 @@ import csv
 import urllib2
 import datetime
 
+def ZData():
+	file_1 = open("ListOfURLStest.txt", "r+") 
+	file_2= open("Results.txt", "r+")
 
-file_1 = open("ListOfURLStest.txt", "r+") 
-file_2= open("Results.txt", "r+")
+	#https://stackoverflow.com/questions/16283799/how-to-read-a-csv-file-from-a-url-with-python
 
-#https://stackoverflow.com/questions/16283799/how-to-read-a-csv-file-from-a-url-with-python
+	#I could create a text file that can be read in as a list (or dictionary with URL : CR#) which prints its findings puts it in another file based on the count
 
-#I could create a text file that can be read in as a list (or dictionary with URL : CR#) which prints its findings puts it in another file based on the count
+	urlArray = file_1.readlines()
 
-urlArray = file_1.readlines()
+	results = []
 
-results = []
+	now = datetime.datetime.now()
 
-now = datetime.datetime.now()
+	file_2.write("The data in the file was created at " + str(now)+ '\n')
 
-file_2.write("The data in the file was created at " + str(now)+ '\n')
+	for urlcsv in urlArray:
+		response = urllib2.urlopen(urlcsv)
+		cr = csv.reader(response)
+		count = -1
+		
+		for row in cr:
+			count = count + 1
+		
+		
+		file_2.write(row[1] + " " + str(count) + '\n')
 
-for urlcsv in urlArray:
-	response = urllib2.urlopen(urlcsv)
-	cr = csv.reader(response)
-	count = -1
-	
-	for row in cr:
-		count = count + 1
-	
-	
-	file_2.write(row[1] + " " + str(count) + '\n')
+	#' '.join('{}{}'.format(key, val) for key, val in results.items())
 
-#' '.join('{}{}'.format(key, val) for key, val in results.items())
+	print "Success! Check the Results.txt file."
 
-print "Success! Check the Results.txt file."
 
+ZData()
 
 
 # https://z.umn.edu/shortener/urls/154734/csv/click_data.csv URL for CR13 before clicked the export to CSV button, the screen defaults in on "last 24 hours" which is 0 currently and aftering
