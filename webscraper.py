@@ -1,5 +1,7 @@
 import csv
 import urllib2
+import datetime
+
 
 file_1 = open("ListOfURLStest.txt", "r+") 
 file_2= open("Results.txt", "r+")
@@ -12,6 +14,10 @@ urlArray = file_1.readlines()
 
 results = []
 
+now = datetime.datetime.now()
+
+file_2.write("The data in the file was created at " + str(now)+ '\n')
+
 for urlcsv in urlArray:
 	response = urllib2.urlopen(urlcsv)
 	cr = csv.reader(response)
@@ -21,10 +27,11 @@ for urlcsv in urlArray:
 		count = count + 1
 	
 	
-	file_2.write(urlcsv + " " + str(count) + '\n')
+	file_2.write(row[1] + " " + str(count) + '\n')
 
 #' '.join('{}{}'.format(key, val) for key, val in results.items())
 
+print "Success! Check the Results.txt file."
 
 
 
