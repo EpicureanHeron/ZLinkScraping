@@ -1,10 +1,17 @@
 import csv
-import urllib2
 import datetime
+import urllib2
 
 def ZData():
+
+	now = datetime.datetime.now()
+	
+	name = str(datetime.datetime.now().date()) + ".txt"
+	
+	
+	
 	file_1 = open("ListOfURLStest.txt", "r+") 
-	file_2= open("Results.txt", "r+")
+	file_2= open(name, "w")
 
 	#https://stackoverflow.com/questions/16283799/how-to-read-a-csv-file-from-a-url-with-python
 
@@ -14,7 +21,7 @@ def ZData():
 
 	results = []
 
-	now = datetime.datetime.now()
+	
 
 	file_2.write("The data in the file was created at " + str(now)+ '\n')
 
