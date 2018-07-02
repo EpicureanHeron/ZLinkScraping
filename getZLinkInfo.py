@@ -10,7 +10,7 @@ def ZData():
 	
 	
 	
-	file_1 = open("ListOfURLStest.txt", "r+") 
+	file_1 = open("ListOfURLs.txt", "r+") 
 	file_2= open(name, "w")
 
 	#https://stackoverflow.com/questions/16283799/how-to-read-a-csv-file-from-a-url-with-python
