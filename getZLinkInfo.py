@@ -6,7 +6,7 @@ def ZData():
 
 	now = datetime.datetime.now()
 	
-	name = str(datetime.datetime.now().date()) + ".txt"
+	name = str(datetime.datetime.now().date()) + ".csv"
 	
 	
 	
@@ -34,7 +34,7 @@ def ZData():
 			count = count + 1
 		
 		
-		file_2.write(row[1] + " " + str(count) + '\n')
+		file_2.write(row[1] + "," + str(count) + '\n')
 
 	#' '.join('{}{}'.format(key, val) for key, val in results.items())
 
