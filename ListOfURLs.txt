@@ -1,0 +1,8 @@
+https://z.umn.edu/shortener/urls/169940/csv/click_data.csv
+https://z.umn.edu/shortener/urls/169780/csv/click_data.csv
+https://z.umn.edu/shortener/urls/168552/csv/click_data.csv
+https://z.umn.edu/shortener/urls/164710/csv/click_data.csv
+https://z.umn.edu/shortener/urls/163220/csv/click_data.csv
+https://z.umn.edu/shortener/urls/160566/csv/click_data.csv
+https://z.umn.edu/shortener/urls/160565/csv/click_data.csv
+https://z.umn.edu/shortener/urls/160564/csv/click_data.csv
