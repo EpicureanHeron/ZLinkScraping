@@ -27,7 +27,7 @@ def ZData():
 				
 		file_2.write(row[1] + "," + str(count) + '\n')
 
-	print "Success! Check the" + name + " file."
+	print "Success! Check the " + name + " file."
 
 
 ZData()
