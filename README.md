@@ -38,7 +38,7 @@ For whatever reason, the path to get the .csv requires a log in, but the .csv fi
 ## Running the program
 
 * Navigate to the directory in terminal or powershell
-* Enter the command `python getZLinkInfo`
+* Enter the command `python getZLinkInfo.py`
 * Program will run and produce a dated .csv file with the results
 
 
