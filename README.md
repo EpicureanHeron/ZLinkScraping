@@ -7,7 +7,7 @@ z.umn.edu provides URL shortening, however when a collection of z links are crea
 ## Solution
 Utilizing Python version 2.7 along with the libraries csv, datetime, and urllib2 all of the data can be scraped and put into a .csv file.
 
-## Details
+## Set Up
 
 In order to get the program to work, a .txt files must exist (in this repo there is a sample one provided) which is called "ListOfURLs.txt". 
 
