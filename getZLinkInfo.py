@@ -18,14 +18,17 @@ def ZData():
 	file_2.write("The data in the file was created at " + str(now)+ '\n')
 
 	for urlcsv in urlArray:
-		response = urllib2.urlopen(urlcsv)
-		cr = csv.reader(response)
-		count = -1
-		
-		for row in cr:
-			count = count + 1
-				
-		file_2.write(row[1] + "," + str(count) + '\n')
+		try: 
+			response = urllib2.urlopen(urlcsv)
+			cr = csv.reader(response)
+			count = -1
+			
+			for row in cr:
+				count = count + 1
+					
+			file_2.write(row[1] + "," + str(count) + '\n')
+		except: 
+			print urlcsv + " failed! "
 
 	print "Success! Check the " + name + " file."
 
