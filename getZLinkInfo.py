@@ -33,7 +33,7 @@ def ZData():
 		except: 
 			print urlcsv + " failed! "
 	end = time.time()
-	print(end - start)
+	print (end - start) + " secs for processing time"
 	print "Success! Check the " + name + " file."
 
 
