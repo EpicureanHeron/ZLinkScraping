@@ -1,9 +1,12 @@
 import csv
 import datetime
 import urllib2
+import time
+
 
 def ZData():
 
+	start = time.time()
 	now = datetime.datetime.now()
 	
 	name = str(datetime.datetime.now().date()) + ".csv"
@@ -16,7 +19,7 @@ def ZData():
 	results = []
 
 	file_2.write("The data in the file was created at " + str(now)+ '\n')
-
+	print "Processing..."
 	for urlcsv in urlArray:
 		try: 
 			response = urllib2.urlopen(urlcsv)
@@ -29,7 +32,8 @@ def ZData():
 			file_2.write(row[1] + "," + str(count) + '\n')
 		except: 
 			print urlcsv + " failed! "
-
+	end = time.time()
+	print(end - start)
 	print "Success! Check the " + name + " file."
 
 
