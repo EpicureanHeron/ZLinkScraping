@@ -41,7 +41,7 @@ def ZData():
 	end = time.time()
 	totalTime = (end-start)
 	# hopefully appends the run time on the log, just so we are tracking it. Would like to get a current baseline in there.
-	log.append(str(now) + ": " + str(totalTime) + '\n') 
+	log.write("date: " +str(now) + ", runtime: " + str(totalTime) + '\n') 
 	print "Success! Check the " + name + " file."
 
 
