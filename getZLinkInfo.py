@@ -27,6 +27,8 @@ def ZData():
 		# to cut down on processing time I should try to just read how many rows, rather than clicking through each row (which is very ineffecient)
 		# SO link https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
 
+		#with open(filename) as f:
+    		#sum(1 for line in f)
 		try: 
 			response = urllib2.urlopen(urlcsv)
 			cr = csv.reader(response)
