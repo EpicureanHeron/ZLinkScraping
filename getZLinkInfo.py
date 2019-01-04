@@ -1,6 +1,6 @@
 import csv
 import datetime
-import urllib2
+import urllib.request
 import time
 
 
@@ -28,8 +28,10 @@ def ZData():
 		#with open(filename) as f:
     		#sum(1 for line in f)
 		try: 
-			response = urllib2.urlopen(urlcsv)
-			cr = csv.reader(response)
+			request = urllib.request.Request(urlcsv)
+			response = urllib.request.urlopen(request)
+			renderedResponse = response.read()
+			cr = csv.reader(renderedResponse)
 			count = -1
 			
 			for row in cr:
