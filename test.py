@@ -9,18 +9,17 @@ test = 'http://z.umn.edu/shortener/urls/154723/csv/click_data.csv'
 request = urllib.request.Request(test)
 print(request)
 response = urllib.request.urlopen(request)
+print(response)
+# reads csv results but not as a csv????? Seems to be the raw response including \n for new lines and all.
+# I don't think the response is the csv...so how do i get that ?
 renderedResponse = response.read()
+print(renderedResponse)
 
-renderedCSV = csv.reader(renderedResponse, dialect='excel', 'rt')
-
-for x in renderedCSV:
-    print(x)
-# print(response)
-
-# test2 = 'https://z.umn.edu/shortener/urls/168552/csv/click_data.csv'
-
-# request2 = urllib.request.Request(test2)
-# print(request2)
-# response2 = urllib.request.urlopen(request2)
-
-# print(response2)
+## Reads local file and counts the lines 
+# MUCH more efficient that previous 
+with open('click_data.csv', 'r') as csvfile:
+    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    row_count = sum(1 for row in spamreader)
+    
+    print(row_count)
+        
