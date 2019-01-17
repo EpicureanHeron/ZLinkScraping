@@ -1,6 +1,6 @@
 import urllib.request
 import csv 
-
+import pandas
 # test = 'http://z.umn.edu/shortener/urls/168552/csv/click_data.csv'
 
 test = 'http://z.umn.edu/shortener/urls/154723/csv/click_data.csv'
@@ -20,6 +20,9 @@ response = urllib.request.urlopen(request)
 
 renderedResponse = response.read().decode('utf8')
 #spamreader = csv.reader(renderedResponse)
+
+
+
 
 with open(renderedResponse, 'r') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', newline='\n')
