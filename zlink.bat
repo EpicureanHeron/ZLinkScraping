@@ -1,0 +1,1 @@
+C:\Users\Joe\AppData\Local\Programs\Python\Python36\python3.exe C:\Users\Joe\Documents\Projects\ZLinkScraping\getZLinkInfo.py %*
