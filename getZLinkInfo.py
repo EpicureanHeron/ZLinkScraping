@@ -1,7 +1,6 @@
-import csv
-import datetime
-import urllib2
+import pandas as pd
 import time
+import datetime
 
 
 def ZData():
@@ -20,30 +19,21 @@ def ZData():
 	urlArray = file_1.readlines()
 
 	file_2.write("The data in the file was created at " + str(now)+ '\n')
-	print "Processing..."
-	for urlcsv in urlArray:
-		# to cut down on processing time I should try to just read how many rows, rather than clicking through each row (which is very ineffecient)
-		# SO link https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
+	print("Processing...")
+	for url in urlArray:
 
-		#with open(filename) as f:
-    		#sum(1 for line in f)
-		try: 
-			response = urllib2.urlopen(urlcsv)
-			cr = csv.reader(response)
-			count = -1
-			
-			for row in cr:
-				count = count + 1
-					
-			file_2.write(row[1] + "," + str(count) + '\n')
-		except: 
-			print urlcsv + " failed! "
+
+		data = pd.read_csv(url)
+		try:
+			file_2.write(data.iloc[0, 1] + "," + str(data.shape[0]) + '\n')
+		except:
+			file_2.write("keyword, 0" + '\n')
 
 	end = time.time()
 	totalTime = (end-start)
 	
 	log.write("date: " +str(now) + ", runtime: " + str(totalTime) + '\n') 
-	print "Success! Check the " + name + " file."
+	print("Success! Check the " + name + " file.")
 
 
 ZData()
