@@ -43,4 +43,6 @@ For whatever reason, the path to get the .csv requires a log in, but the .csv fi
 
 
 
+## .bat file
 
+A .bat file is included but only works on my local machine. Need to recode or not include it. 
