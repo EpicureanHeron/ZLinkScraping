@@ -12,10 +12,9 @@ Utilizing Python  along with the libraries Pandas, datetime, and time all of the
 ### Installing Pandas
 
 If your local Python enviroment does not have Pandas installed run the following
-
-'''
+```
 python -m pip install pandas 
-'''
+```
 
 ### URL List
 
