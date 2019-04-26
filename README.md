@@ -5,9 +5,18 @@ z.umn.edu provides URL shortening, however when a collection of z links are crea
 
 
 ## Solution
-Utilizing Python  along with the libraries Pandas, datetime, and urllib2 all of the data can be scraped and put into a .csv file.
+Utilizing Python  along with the libraries Pandas, datetime, and time all of the data can be scraped and put into a .csv file.
 
 ## Set Up
+
+### Installing Pandas
+
+If your local Python enviroment does not have Pandas installed run the following
+```
+python -m pip install pandas 
+```
+
+### URL List
 
 In order to get the program to work, a .txt files must exist (in this repo there is a sample one provided) which is called "ListOfURLs.txt". 
 
@@ -43,4 +52,6 @@ For whatever reason, the path to get the .csv requires a log in, but the .csv fi
 
 
 
+## .bat file
 
+A .bat file is included but only works on my local machine. Need to recode or not include it. 
