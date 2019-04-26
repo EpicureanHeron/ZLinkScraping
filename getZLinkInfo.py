@@ -1,15 +1,17 @@
 import pandas as pd
 import time
 import datetime
+import os
 
 def getZLinkInfo():
 
 	start = time.time()
 	now = datetime.datetime.now()
-	name = str(datetime.datetime.now().date()) + ".csv"
-	file_1 = open("ListOfURLs.txt", "r+") 
+	cwd = os.getcwd()
+	name = cwd + '/' + str(datetime.datetime.now().date()) + ".csv"
+	file_1 = open(cwd + "/ListOfURLs.txt", "r+") 
 	file_2= open(name, "w")
-	log = open("log.txt", "a")
+	log = open(cwd + "/log.txt", "a")
 	urlArray = file_1.readlines()
 	file_2.write("The data in the file was created at " + str(now)+ '\n')
 	print("Processing...")
