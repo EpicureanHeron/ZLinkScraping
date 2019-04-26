@@ -4,14 +4,13 @@ import datetime
 import os
 
 def getZLinkInfo():
-
 	start = time.time()
 	now = datetime.datetime.now()
 	cwd = os.getcwd()
-	name = cwd + '/' + str(datetime.datetime.now().date()) + ".csv"
-	file_1 = open(cwd + "/ListOfURLs.txt", "r+") 
+	name = cwd + '/ZLinkScraping/' + str(datetime.datetime.now().date()) + ".csv"
+	file_1 = open(cwd + "/ZLinkScraping/ListOfURLs.txt", "r+") 
 	file_2= open(name, "w")
-	log = open(cwd + "/log.txt", "a")
+	log = open(cwd + "/ZLinkScraping/log.txt", "a")
 	urlArray = file_1.readlines()
 	file_2.write("The data in the file was created at " + str(now)+ '\n')
 	print("Processing...")
